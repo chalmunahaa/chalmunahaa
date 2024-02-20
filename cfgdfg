@@ -1,0 +1,33 @@
+package com.sun.content.server.billing.external; 
+ 
+import com.sun.content.server.billing.BillingException; 
+import com.sun.content.server.billing.BillingInfo; 
+import com.sun.content.server.billing.BillingManager; 
+import com.sun.content.server.log.BillingManagerKeys; 
+import com.sun.content.server.log.LogCategory; 
+ 
+/** 
+ * This is a sample implementation of the Billing API. 
+ */ 
+public class CDSBillingManager implements BillingManager 
+{ 
+  // These flags can be used to simulate responses from the billing 
+  //integration. 
+  public static final int SUCCESS = 0; 
+  public static final int EXCEPTION = 1; 
+  public static final int BILLING_EXCEPTION = 2; 
+  public static final int UNAUTHORIZED = 3; 
+  public static final int NULL = 4; 
+ 
+  // by default everything will pass through fine 
+  // but you can change these at runtime. 
+  public static int AUTHORIZE_RESPONSE = SUCCESS; 
+  public static int GET_BILLING_INFO_RESPONSE = SUCCESS; 
+  public static int GET_BILLING_INFOS_RESPONSE = SUCCESS; 
+  public static int CONFIRM_RESPONSE = SUCCESS; 
+  public static int DELETE_RESPONSE = SUCCESS; 
+  public static int REFUND_RESPONSE = SUCCESS; 
+  public static int REVERSE_RESPONSE = SUCCESS; 
+  public static int SUBSCRIBE_RESPONSE = SUCCESS; 
+  public static int UNSUBSCRIBE_RESPONSE = SUCCESS; 
+  public static int CHECK_SUBSCRIPTION_RESPONSE = SUCCESS; 
